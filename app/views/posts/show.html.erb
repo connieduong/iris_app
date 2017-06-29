@@ -1,0 +1,47 @@
+<blockquote>
+
+<div class="">
+    <b>Title: </b><%= @post.title %>
+</div>
+<br>
+<div class="">
+  by <%= link_to(@post.user.name, user_path(@post.user)) %>
+</div>
+<br>
+<div class="">
+  <%= @post.body %>
+</div>
+<br>
+<div class="">
+
+  <div>
+        <% @post.comments.each do |c| %>
+          <%= c.body %>
+          by <%= link_to(@post.user.name, user_path(@post.user)) %>
+  </div>
+  <br>
+<% end %>
+<br>
+
+  <p>Create Comment</p>
+
+    <%= form_for [@post, @comment] do |f| %>
+    <div><%= f.text_area :body, placeholder: "..." %></div>
+
+    <div>
+      <%= f.submit 'Submit'%>
+    </div>
+
+    <% end %>
+
+
+
+<br>
+
+
+</blockquote>
+
+
+<div class="">
+  <%= link_to 'Return to Recent Posts', posts_path %>
+</div>

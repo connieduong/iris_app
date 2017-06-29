@@ -1,0 +1,14 @@
+<div class="">
+  <%= @user.name %>
+</div>
+
+<div class="">
+  <% @posts.each do |p| %>
+  <ul>
+      <%= link_to p.title, post_path(p) %>
+      <br>
+      <%= p.body %>
+
+  </ul>
+  <% end %>
+</div>

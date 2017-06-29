@@ -1,0 +1,18 @@
+<h1>Edit your post</h1>
+<div>
+  <%= link_to'Return to All Posts', posts_path %>
+</div>
+<br>
+
+<%= form_for @post do |f| %>
+  <div><%= f.text_area :title, placeholder: "Title" %>
+  </div>
+
+  <div><%= f.text_area :body, placeholder: "..." %></div>
+
+  <div>
+  <%= f.submit 'Edit Post' %>
+  </div>
+
+
+<% end %>

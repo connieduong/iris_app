@@ -1,0 +1,18 @@
+
+<h1>Recent Posts</h1>
+
+<% @posts.each do |p| %>
+<%= link_to p.title, post_path(p) %>
+<ul>
+    <%= p.body %>
+    <br>
+    <br>
+
+      <%= link_to(p.user.name, user_path(p.user)) %>
+    <br>
+    <br>
+      <%= link_to 'Edit', edit_post_path(p) %>
+
+</ul>
+<% end %>
+<%= link_to 'Create a new post', new_post_path %>

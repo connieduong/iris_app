@@ -1,0 +1,26 @@
+
+<h1>Create An Account</h1>
+
+  <%= form_for @user do |f| %>
+
+    <div class="form-group">
+      <%= f.text_field :name, placeholder: "Name" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.email_field :email, placeholder: "Email" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.password_field :password, placeholder: "Password" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.password_field :password, placeholder: "Confirm Password" %>
+    </div>
+
+    <div>
+      <%= f.submit 'Create Account' %>
+    </div>
+
+  <% end %>
