@@ -6,21 +6,38 @@
 <br>
 <div class="">
   by <%= link_to(@post.user.name, user_path(@post.user)) %>
+
+  <br>
+  <% if @post.user_id == current_user.id %>
+  <%= link_to 'Delete', post_path, method: "DELETE", data: {confirm: 'Are you sure?'}%>
+  <% end %>
 </div>
 <br>
 <div class="">
   <%= @post.body %>
+  <br>
 </div>
 <br>
 <div class="">
+    <ul>
+      <% @post.comments.each do |c| %>
+      <%= c.body %>
+      <br>
+      <br>
+      by <%= link_to(c.user.name, user_path(c.user)) %>
+      <br>
+      <br>
 
-  <div>
-        <% @post.comments.each do |c| %>
-          <%= c.body %>
-          by <%= link_to(@post.user.name, user_path(@post.user)) %>
-  </div>
-  <br>
-<% end %>
+      <br>
+
+        <br>
+        <br>
+      <% end %>
+
+    </ul>
+
+
+
 <br>
 
   <p>Create Comment</p>
@@ -34,7 +51,9 @@
 
     <% end %>
 
-
+    <% if @user.comment == current_user.id %>
+    <%= link_to 'Delete', post_path, method: "DELETE" %>
+    <% end %>
 
 <br>
 

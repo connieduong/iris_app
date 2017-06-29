@@ -17,7 +17,7 @@ class CommentsController < ApplicationController
     @post.comments.create({
       body: params[:comment][:body],
       user_id: current_user.id,
-      post_id: @post.id
+      post_id: @post.id,
     })
 
     redirect_to post_path(@post)
@@ -28,5 +28,12 @@ class CommentsController < ApplicationController
     @comment.body = params[:comment][:id]
     @comment.save
     redirect_to post_path(@post)
+  end
+
+
+  def destroy
+    @comment = Comment.find(params[:id])
+    @comment.destroy  
+    redirect_to posts_path
   end
 end
