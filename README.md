@@ -1,24 +1,33 @@
-##Iris
+## Iris
 
-My app is a message board called [Iris][https://morning-dusk-48723.herokuapp.com]. 
+My app is a message board called Iris where users can create posts and comment on posts.
 
-##Technologies Used:
-  - Ruby on Rails v. 5.1.1
-  - [Boostrap][http://getbootstrap.com/]
+<https://morning-dusk-48723.herokuapp.com>.
 
-##Dream Features
+### Technologies Used
+
+- Ruby on Rails v. 5.1.1
+- Boostrap
+
+### Dream Features
+
 - Allow users to add images and videos.
 - Upload and use profile pictures.
 - Users can send each other direct messages.
 - Up and down votes on posts.
 - Timestamp to allow users see when a post was created and/or edited.
 
-##Bugs
+### Bugs
+
 - Adding the navigation bar created routing issues within my app.
-    - Posts cannot be edited.
-    - Comments cannot be edited or deleted.
+- Comments cannot be edited or deleted.
 
-##Credit:
- - Theme is from [Bootswatch][http://getbootstrap.com/].
+### Credit:
 
-Project Board on [Trello][https://trello.com/b/PGjBuimf/project-2-app].
+- Theme is from Bootswatch.
+ - <https://bootswatch.com/cerulean/>
+
+
+### Project Board on Trello
+
+  <https://trello.com/b/PGjBuimf/project-2-app>
