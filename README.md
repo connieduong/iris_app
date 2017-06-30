@@ -1,24 +1,24 @@
-# README
+##Iris
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+My app is a message board called [Iris][https://morning-dusk-48723.herokuapp.com]. 
 
-Things you may want to cover:
+##Technologies Used:
+  - Ruby on Rails v. 5.1.1
+  - [Boostrap][http://getbootstrap.com/]
 
-* Ruby version
+##Dream Features
+- Allow users to add images and videos.
+- Upload and use profile pictures.
+- Users can send each other direct messages.
+- Up and down votes on posts.
+- Timestamp to allow users see when a post was created and/or edited.
 
-* System dependencies
+##Bugs
+- Adding the navigation bar created routing issues within my app.
+    - Posts cannot be edited.
+    - Comments cannot be edited or deleted.
 
-* Configuration
+##Credit:
+ - Theme is from [Bootswatch][http://getbootstrap.com/].
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Project Board on [Trello][https://trello.com/b/PGjBuimf/project-2-app].

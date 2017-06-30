@@ -4,7 +4,8 @@
         <footer><%= link_to(@post.user.name, user_path(@post.user)) %></footer>
         <br>
         <% if current_user && @post.user_id == current_user.id %>
-        <%= link_to 'Delete', post_path, method: "DELETE" %>
+        <%= link_to 'Delete', post_path, method: "DELETE" %> &nbsp &nbsp<%= link_to 'Edit', edit_post_path %>
+
         <% end %>
   </div>
     <div class="">
