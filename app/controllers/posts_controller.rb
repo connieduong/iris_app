@@ -1,11 +1,12 @@
 class PostsController < ApplicationController
+  before_action :authorize, only: [:new, :show]
 
   def index
     @posts = Post.all
-
   end
 
   def show
+    puts params
     @post = Post.find(params[:id])
     @comment = Comment.new
   end
@@ -19,13 +20,12 @@ class PostsController < ApplicationController
     @post = Post.new
     @post.title = params[:post][:title]
     @post.body = params[:post][:body]
-
       @post.user = current_user
-      if @post.save
-        redirect_to post_path(@post)
-      else
-        redirect_to new_post_path
-    end
+        if @post.save
+          redirect_to post_path(@post)
+        else
+          redirect_to new_post_path
+      end
   end
 
   def edit

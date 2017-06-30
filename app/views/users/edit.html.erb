@@ -1,4 +1,7 @@
-<h1>Edit Profile</h1>
+<div class="jumbotron">
+
+
+<h3>Edit Profile</h3>
 <%= form_for(@user) do |f| %>
 
 
@@ -15,7 +18,7 @@
   <%= f.password_field :password, placeholder: "Password" %>
 </div>
 
-<div class="">
+<div class="form-group">
   <%= f.password_field :password, placeholder: "Confirm Password" %>
 </div>
 
@@ -28,7 +31,9 @@
 
 
 <div>
-  <%= f.submit 'Update Profile' %>
+  <%= f.submit 'Update Profile', class: "btn btn-primary" %>
+
+  <% end %>
 </div>
 
-<% end %>
+</div>

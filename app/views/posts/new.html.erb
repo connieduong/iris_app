@@ -1,20 +1,18 @@
-<h1>Create Post</h1>
-
-
-<div>
-  <%= link_to'Return to All Posts', posts_path %>
-</div>
-<br>
-
+<div class="jumbotron">
+  Create a new post:
+  <br>
+  <br>
 <%= form_for @post do |f| %>
-  <div><%= f.text_area :title, placeholder: "Title" %>
+  <div class="form-group">
+    <%= f.text_area :title, placeholder: "Title", class: "in-line" %>
   </div>
 
-  <div><%= f.text_area :body, placeholder: "..." %></div>
-
-  <div>
-  <%= f.submit 'Submit' %>
+  <div class="form-group">
+    <%= f.text_area :body, placeholder: "...", class: "in-line" %>
   </div>
 
-
-<% end %>
+  <div class="form-group">
+    <%= f.submit 'Submit', class: 'btn btn-primary' %>
+    <% end %>
+  </div>
+</div>

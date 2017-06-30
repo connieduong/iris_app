@@ -1,14 +1,29 @@
-<div class="">
+<div class="jumbotron">
+  <ul><h4>
   <%= @user.name %>
-</div>
 
-<div class="">
-  <% @posts.each do |p| %>
-  <ul>
-      <%= link_to p.title, post_path(p) %>
-      <br>
-      <%= p.body %>
-
+  </h4>
   </ul>
-  <% end %>
+  <ul>
+    Email: <%= @user.email %>
+  </ul>
+  <ul>Profile Pic: </ul>
+
+
+  <div class="media-body col-md-offset-*">
+    <ul><h4>
+      Recent posts:
+    </h4>
+s
+    </ul>
+    <% @user.posts.each do |p| %>
+    <ul>
+        <%= link_to p.title, post_path(p), class: "media-heading" %>
+        <br>
+        <%= p.body %>
+    </ul>
+    <% end %>
+  </div>
+  <div><%= link_to 'Go back to recent posts', posts_path %></div>
+
 </div>

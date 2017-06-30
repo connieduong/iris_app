@@ -1,26 +1,25 @@
-
-<h1>Create An Account</h1>
-
+<table class="table col-sm-5">
+  <h4>Create An Account</h4>
   <%= form_for @user do |f| %>
 
-    <div class="form-group">
-      <%= f.text_field :name, placeholder: "Name" %>
+    <div class="form-group" >
+      <%= f.text_field :name, placeholder: "Name", class: "in-line"%>
     </div>
 
     <div class="form-group">
-      <%= f.email_field :email, placeholder: "Email" %>
+      <%= f.email_field :email, placeholder: "Email", class: "in-line" %>
     </div>
 
     <div class="form-group">
-      <%= f.password_field :password, placeholder: "Password" %>
+      <%= f.password_field :password, placeholder: "Password", class: "in-line" %>
     </div>
 
     <div class="form-group">
-      <%= f.password_field :password, placeholder: "Confirm Password" %>
+      <%= f.password_field :password, placeholder: "Confirm Password", class: "in-line" %>
     </div>
 
     <div>
-      <%= f.submit 'Create Account' %>
+      <%= f.submit 'Create Account', class: "btn btn-primary" %>
     </div>
-
   <% end %>
+</table>

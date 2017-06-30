@@ -1,66 +1,50 @@
-<blockquote>
-
-<div class="">
-    <b>Title: </b><%= @post.title %>
-</div>
-<br>
-<div class="">
-  by <%= link_to(@post.user.name, user_path(@post.user)) %>
-
-  <br>
-  <% if @post.user_id == current_user.id %>
-  <%= link_to 'Delete', post_path, method: "DELETE", data: {confirm: 'Are you sure?'}%>
-  <% end %>
-</div>
-<br>
-<div class="">
-  <%= @post.body %>
-  <br>
-</div>
-<br>
-<div class="">
-    <ul>
-      <% @post.comments.each do |c| %>
-      <%= c.body %>
-      <br>
-      <br>
-      by <%= link_to(c.user.name, user_path(c.user)) %>
-      <br>
-      <br>
-
-      <br>
-
+  <div class="">
+    <h4><%= @post.title %></h4>
+        <%= @post.body %>
+        <footer><%= link_to(@post.user.name, user_path(@post.user)) %></footer>
         <br>
-        <br>
-      <% end %>
+        <% if current_user && @post.user_id == current_user.id %>
+        <%= link_to 'Delete', post_path, method: "DELETE" %>
+        <% end %>
+  </div>
+    <div class="">
 
-    </ul>
+        <ul class="panel-body">
+          <div class="panel-body">
+          <% @post.comments.each do |c| %>
+          <%= c.body %>
+          <br>
+          <footer><%= link_to(c.user.name, user_path(c.user)) %></footer>
+          <br>
+          <% if current_user && @comment.user_id == current_user.id %>
+              <%= link_to 'Delete', post_path, method: "DELETE" %>
+              <% end %>
+          <br>
+          <% end %>
+          </div>
+        </ul>
+
+
+  </blockquote>
+
+  </div>
 
 
 
-<br>
+<div class="input-group input-group-lg">
 
   <p>Create Comment</p>
-
     <%= form_for [@post, @comment] do |f| %>
-    <div><%= f.text_area :body, placeholder: "..." %></div>
+    <div><%= f.text_area :body, placeholder: "...", class: "input-group input-group-lg"%></div>
 
     <div>
-      <%= f.submit 'Submit'%>
+      <%= f.submit 'Submit', {class: "btn btn-primary"}%>
     </div>
-
     <% end %>
-
-    <% if @user.comment == current_user.id %>
-    <%= link_to 'Delete', post_path, method: "DELETE" %>
-    <% end %>
-
-<br>
-
-
-</blockquote>
-
-
-<div class="">
-  <%= link_to 'Return to Recent Posts', posts_path %>
 </div>
+<br>
+<br>
+<div><%= link_to 'Go back to recent posts', posts_path %></div>
+
+</div>
+</blockquote>
