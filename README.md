@@ -30,4 +30,4 @@ My app is a message board called Iris where users can create posts and comment o
 
 ### Project Board on Trello
 
-  <https://trello.com/b/PGjBuimf/project-2-app>
+  - <https://trello.com/b/PGjBuimf/project-2-app>
